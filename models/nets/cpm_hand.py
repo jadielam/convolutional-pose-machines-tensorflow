@@ -281,8 +281,9 @@ class CPM_Model(object):
 
     def load_weights_from_file(self, weight_file_path, sess, finetune=True):
         # weight_file_object = open(weight_file_path, 'rb')
-        weights = pickle.load(open(weight_file_path, 'rb'), encoding='latin1')
-
+        #weights = pickle.load(open(weight_file_path, 'rb'), encoding='latin1')
+        weights = pickle.load(open(weight_file_path, 'rb'))
+        
         with tf.variable_scope('', reuse=True):
             ## Pre stage conv
             # conv1
