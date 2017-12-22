@@ -19,12 +19,12 @@ ADD environment.yaml .
 RUN conda env create -f environment.yaml
 
 # Creating src folder
-RUN mkdir /home/ubuntu/src
-ADD code/ /home/ubuntu/src/convolutional-pose-machines-tensorflow
+RUN mkdir src
+ADD code/ src/convolutional-pose-machines-tensorflow
 RUN [ "/bin/bash", "-c", "source activate blush" ]
 
-WORKDIR /home/ubuntu/src/convolutional-pose-machines-tensorflow
-ENV PYTHONPATH=:/home/ubuntu/src/convolutional-pose-machines-tensorflow
+WORKDIR src/convolutional-pose-machines-tensorflow
+ENV PYTHONPATH=:src/convolutional-pose-machines-tensorflow
 EXPOSE 8888
 
 # Running jupyter notebook as entry point
