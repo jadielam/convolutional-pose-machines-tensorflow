@@ -15,6 +15,7 @@ dependencies:
     - boto3
     - botocore
     - awscli
+    - jupyter
 channels:
     - conda-forge
     - https://conda.anaconda.org/menpo
