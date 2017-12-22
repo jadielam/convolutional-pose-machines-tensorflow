@@ -1,0 +1,20 @@
+name: pose
+dependencies:
+    - pip:
+        - easydict
+        - pyyaml
+    - python=2.7
+    - imageio
+    - numpy
+    - h5py
+    - tensorflow-gpu
+    - scikit-learn
+    - scikit-image
+    - theano
+    - opencv3
+    - boto3
+    - botocore
+    - awscli
+channels:
+    - conda-forge
+    - https://conda.anaconda.org/menpo
