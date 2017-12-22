@@ -21,12 +21,12 @@ RUN conda env create -f environment.yaml
 # Creating src folder
 RUN mkdir src
 ADD code/ src/convolutional-pose-machines-tensorflow
-RUN [ "/bin/bash", "-c", "source activate blush" ]
+RUN [ "/bin/bash", "-c", "source activate pose" ]
 
 WORKDIR src/convolutional-pose-machines-tensorflow
 ENV PYTHONPATH=:src/convolutional-pose-machines-tensorflow
 EXPOSE 8888
 
 # Running jupyter notebook as entry point
-ENTRYPOINT ["/bin/bash", "-c", "source activate blush && jupyter notebook --ip='*' --no-browser --port=8888"]
+ENTRYPOINT ["/bin/bash", "-c", "source activate pose && jupyter notebook --ip='*' --no-browser --port=8888"]
 
