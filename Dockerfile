@@ -28,5 +28,5 @@ ENV PYTHONPATH=:src/convolutional-pose-machines-tensorflow
 EXPOSE 8888
 
 # Running jupyter notebook as entry point
-ENTRYPOINT ["/bin/bash", "-c", "source activate pose && jupyter notebook --ip='*' --no-browser --port=8888"]
-
+#ENTRYPOINT ["/bin/bash", "-c", "source activate pose && jupyter notebook --ip='*' --no-browser --port=8888"]
+ENTRYPOINT ["/bin/bash", "-c", "source activate pose"]
