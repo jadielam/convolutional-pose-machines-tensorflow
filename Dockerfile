@@ -1,3 +1,9 @@
+# To Build:
+# docker build -t pose .
+
+# To run:
+# nvidia-docker run -p 8888:8888 -v /home/ubuntu/src/notebooks:/src/notebooks -t pose
+
 FROM nvidia/cuda:9.0-cudnn7-runtime-ubuntu16.04
 
 # Installing dependencies for python packages
