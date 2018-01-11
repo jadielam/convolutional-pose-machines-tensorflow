@@ -137,6 +137,7 @@ def main():
 
     with tf.device(tf_device):
         for im_id in images_ids:
+            print(im_id)
             im_path = os.path.join(images_folder, im_id)
             test_img = cpm_utils.read_image(im_path, [], input_size, 'IMAGE')
             test_img_resize = cv2.resize(test_img, (input_size, input_size))
