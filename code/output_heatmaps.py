@@ -14,7 +14,7 @@ import math
 import sys
 import imageio
 
-input_size = "368"
+input_size = 368
 hmap_size = 46
 cmap_radius = 21
 joints = 21
