@@ -66,8 +66,8 @@ def visualize_result(test_img, last_heatmap):
     Returns 
     '''
     joint_coord_set = np.zeros((joints, 2))
-    black_img = np.zeros_like(test_img)
-    mask_img = np.zeros((test_img.shape[0], test_img.shape[1], 3))
+    black_img = np.zeros((test_img.shape[0], test_img.shape[1], test_img.shape[2]))
+    mask_img = np.zeros_like((test_img.shape[0], test_img.shape[1], test_img.shape[2]))
     
     for joint_num in range(joints):
         joint_coord = np.unravel_index(np.argmax(last_heatmap[:, :, joint_num]),
