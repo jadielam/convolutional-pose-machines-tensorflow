@@ -14,7 +14,6 @@ import math
 import sys
 import imageio
 
-model_path = "models/weights/cpm_hand.pkl"
 input_size = "368"
 hmap_size = 46
 cmap_radius = 21
@@ -113,6 +112,7 @@ def main():
     heatmaps_output_folder = conf['heatmaps_output_folder']
     masks_output_folder = conf['masks_output_folder']
     images_output_folder = conf['images_output_folder']
+    model_path = conf['model_path']
 
     #1. Read list of images from folder
     images_ids = [a for a in os.listdir(images_folder) if a.endswith(".jpg")]
