@@ -75,9 +75,9 @@ def visualize_result(test_img, last_heatmap):
         joint_coord_set[joint_num, :] = [joint_coord[0], joint_coord[1]]
 
         color_code_num = (joint_num % len(joint_color_code))
-        joint_color = joint_color_code[color_code_num]
+        joint_color = map(lambda x: x + 35 * (joint_num % 4), joint_color_code[color_code_num])
         cv2.circle(black_img, center=(joint_coord[1], joint_coord[0]), radius=4, color=joint_color, thickness=-1)
-        cv2.circle(mask_img, center=(joint_coord[1], joint_coord[0]), radius=5, color=(255, 255, 255), thickness=-1)
+        cv2.circle(mask_img, center=(joint_coord[1], joint_coord[0]), radius=10, color=(255, 255, 255), thickness=-1)
     
     for limb_num in range(len(limbs)):
         x1 = joint_coord_set[limbs[limb_num][0], 0]
@@ -92,11 +92,11 @@ def visualize_result(test_img, last_heatmap):
                                        int(deg),
                                        0, 360, 1)
             mask_polygon = cv2.ellipse2Poly((int((y1 + y2) / 2), int((x1 + x2) / 2)),
-                                       (int(length / 2), 8),
+                                       (int(length / 2), 20),
                                        int(deg),
                                        0, 360, 1)
             color_code_num = (joint_num % len(joint_color_code))
-            limb_color = joint_color_code[color_code_num]
+            limb_color = map(lambda x: x + 35 * (joint_num % 4), joint_color_code[color_code_num])
 
             cv2.fillConvexPoly(black_img, polygon, color=limb_color)
             cv2.fillConvexPoly(mask_img, mask_polygon, color = (255, 255, 255))
@@ -156,7 +156,7 @@ def main():
             heatmap_path = os.path.join(heatmaps_output_folder, im_id + ".npy")
             mask_path = os.path.join(masks_output_folder, im_id)
             im_path = os.path.join(images_output_folder, im_id)
-            np.save(heatmap_path, last_heatmap)
+            #np.save(heatmap_path, last_heatmap)
             imageio.imsave(mask_path, masked_img)
             imageio.imsave(im_path, demo_img)
 
