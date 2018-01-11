@@ -97,7 +97,7 @@ def visualize_result(test_img, stage_heatmap_np):
                                        int(deg),
                                        0, 360, 1)
             color_code_num = (joint_num % len(joint_color_code))
-            limb_color = joint_color_code[color_code_num]_num % 4), joint_color_code[color_code_num])
+            limb_color = joint_color_code[color_code_num]
 
             cv2.fillConvexPoly(black_img, polygon, color=limb_color)
             cv2.fillConvexPoly(mask_img, mask_polygon, color = (255, 255, 255))
