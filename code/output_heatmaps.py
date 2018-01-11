@@ -61,7 +61,7 @@ if sys.version_info.major == 3:
 else:
     PYTHON_VERSION = 2
 
-def visualize_result(test_img, stage_heatmap_np):
+def visualize_result(test_img, last_heatmap):
     '''
     Returns 
     '''
