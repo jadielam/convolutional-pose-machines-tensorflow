@@ -151,12 +151,14 @@ def main():
                                                             })
             last_heatmap = stage_heatmap_np[len(stage_heatmap_np) - 1][0, :, :, 0:joints].reshape(
                 (hmap_size, hmap_size, joints))
+            heatmap_path = os.path.join(heatmaps_output_folder, im_id + ".npy")
+            np.save(heatmap_path, last_heatmap)
             last_heatmap = cv2.resize(last_heatmap, (test_img.shape[1], test_img.shape[0]))
             demo_img, masked_img = visualize_result(test_img, last_heatmap)
             heatmap_path = os.path.join(heatmaps_output_folder, im_id + ".npy")
             mask_path = os.path.join(masks_output_folder, im_id)
             im_path = os.path.join(images_output_folder, im_id)
-            np.save(heatmap_path, last_heatmap)
+            
             imageio.imsave(mask_path, masked_img)
             imageio.imsave(im_path, demo_img)
 
