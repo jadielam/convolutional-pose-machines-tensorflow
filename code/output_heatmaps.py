@@ -156,7 +156,7 @@ def main():
             heatmap_path = os.path.join(heatmaps_output_folder, im_id + ".npy")
             mask_path = os.path.join(masks_output_folder, im_id)
             im_path = os.path.join(images_output_folder, im_id)
-            #np.save(heatmap_path, last_heatmap)
+            np.save(heatmap_path, last_heatmap)
             imageio.imsave(mask_path, masked_img)
             imageio.imsave(im_path, demo_img)
 
